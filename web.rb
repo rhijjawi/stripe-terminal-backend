@@ -40,9 +40,6 @@ def validateApiKey
   if Stripe.api_key.nil? || Stripe.api_key.empty?
     return "Error: you provided an empty secret key. Please provide your test mode secret key. For more information, see https://stripe.com/docs/keys"
   end
-  if Stripe.api_key.start_with?('pk')
-    return "Error: you used a publishable key to set up the example backend. Please use your test mode secret key. For more information, see https://stripe.com/docs/keys"
-  end
   return nil
 end
 
